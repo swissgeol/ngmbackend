@@ -1,0 +1,25 @@
+/node_modules
+/dist
+/.cache
+manuals/dist
+### Python template
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+__pycache__/
+
+# Distribution / packaging
+/dist/
+/.cache/
+/.coverage
+/coverage_report/
+/build/
+
+# Virtual environment
+/.venv/
+
+
+.pytest_cache
+
+# serverless stuff
+/.serverless/requirements/
+*.zip
