@@ -160,7 +160,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-flask/dev/1597695246205-2020-08-17T20:14:06.205Z/serverless-flask.zip"
+                "S3Key": "serverless/serverless-flask/dev/1597696208204-2020-08-17T20:30:08.204Z/serverless-flask.zip"
               },
               "FunctionName": "serverless-flask-dev-app",
               "Handler": "wsgi_handler.handler",
@@ -178,14 +178,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersiongrRskY9oPtEqsPDswe7FFMftIOLOwDgT828Y0kqSY": {
+          "AppLambdaVersionOHEmIJrZA8ue9QDveZL6vvOr5FQZjeh5p7OpU0tyBzw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "QENyOd4dyoqOUSDy5ieSiWMeRkpNERfs7tE4lPKzwrY="
+              "CodeSha256": "7o7RlXqzFUYw1jzi5YaUNtTCs/sATeEB9GSTE3iwbqk="
             }
           },
           "ApiGatewayRestApi": {
@@ -304,7 +304,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1597695208222": {
+          "ApiGatewayDeployment1597696176940": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -364,7 +364,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersiongrRskY9oPtEqsPDswe7FFMftIOLOwDgT828Y0kqSY"
+              "Ref": "AppLambdaVersionOHEmIJrZA8ue9QDveZL6vvOr5FQZjeh5p7OpU0tyBzw"
             }
           },
           "ServiceEndpoint": {
@@ -492,7 +492,7 @@
         "timeout": 6,
         "runtime": "python3.6",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersiongrRskY9oPtEqsPDswe7FFMftIOLOwDgT828Y0kqSY"
+        "versionLogicalId": "AppLambdaVersionOHEmIJrZA8ue9QDveZL6vvOr5FQZjeh5p7OpU0tyBzw"
       }
     },
     "configValidationMode": "warn",
@@ -522,7 +522,7 @@
         ],
         "exclude": [],
         "artifact": "/home/aborghi/Documents/projects/NGM/ngmbackend/.serverless/serverless-flask.zip",
-        "artifactDirectoryName": "serverless/serverless-flask/dev/1597695246205-2020-08-17T20:14:06.205Z"
+        "artifactDirectoryName": "serverless/serverless-flask/dev/1597696208204-2020-08-17T20:30:08.204Z"
       },
       "layers": {
         "$ref": "$[\"service\"][\"layers\"]"
@@ -533,7 +533,7 @@
     "artifact": "/home/aborghi/Documents/projects/NGM/ngmbackend/.serverless/serverless-flask.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-flask/dev/1597695246205-2020-08-17T20:14:06.205Z",
+    "artifactDirectoryName": "serverless/serverless-flask/dev/1597696208204-2020-08-17T20:30:08.204Z",
     "artifact": "serverless-flask.zip"
   }
 }
