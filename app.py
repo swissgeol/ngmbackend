@@ -45,6 +45,10 @@ def get_file_from_bucket(bucket_name, file_name, access_key, secret_key, session
         if e.response['Error']['Code'] == 'NoSuchKey':
             raise NgmHttpError("No such key : {}".format(file_name),
                                                          status_code = status.HTTP_404_NOT_FOUND)
+        elif e.response['Error']['Code'] == 'ExpiredToken':
+            raise NgmHttpError("Expired Token, must revalidate", status_code = status.HTTP_401_UNAUTHORIZED)
+        elif e.response['Error']['Code'] == 'SignatureDoesNotMatch' or e.response['Error']['Code'] == 'InvalidAccessKeyId' or e.response['Error']['Code'] == 'S3ResponseError':
+            raise NgmHttpError("Invalid access key or secret key", status_code = status.HTTP_403_FORBIDDEN)                                                         
         else:
             raise NgmHttpError("unknown error: {}".format(e), status_code = status.HTTP_500_INTERNAL_SERVER_ERROR)
     except Exception as e:
@@ -62,10 +66,15 @@ def get_tile(path):
         # reminder:
         # Authorization: Basic $(echo -n aws_key:aws_secret.session_token | base64 --wrap=0)
         authHeader = request.headers['Authorization']
-        access_key, tmp = decode(authHeader)
-        aws_secret_key, session_token = tmp.split('.')
     except AttributeError as e:
         raise NgmHttpError('Authorization required', status.HTTP_401_UNAUTHORIZED)
+    except KeyError as e:
+        raise NgmHttpError('Authorization required', status.HTTP_401_UNAUTHORIZED)
+    try:
+        access_key, tmp = decode(authHeader)
+        aws_secret_key, session_token = tmp.split('.')
+    except Exception as e:
+        raise NgmHttpError("unknown error: {}".format(e), status_code = status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     return get_file_from_bucket('ngm-dev-authenticated-resources',
                                  s3key,
