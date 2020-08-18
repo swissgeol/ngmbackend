@@ -15,3 +15,11 @@ sls deploy
 ```bash
 pip freeze > requirements.txt
 ```
+
+## local development
+```bash
+virtualenv .venv --python=python3
+source ~/.venv/bin/activate
+pip install -r requirements.txt
+FLASK_ENV=development flask run
+```

@@ -160,7 +160,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-flask/dev/1597698445353-2020-08-17T21:07:25.353Z/serverless-flask.zip"
+                "S3Key": "serverless/serverless-flask/dev/1597699645839-2020-08-17T21:27:25.839Z/serverless-flask.zip"
               },
               "FunctionName": "serverless-flask-dev-app",
               "Handler": "wsgi_handler.handler",
@@ -304,7 +304,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1597698414987": {
+          "ApiGatewayDeployment1597699627887": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -480,10 +480,12 @@
         "handler": "wsgi_handler.handler",
         "events": [
           {
-            "http": "ANY /"
+            "http": "ANY /",
+            "cors": true
           },
           {
-            "http": "ANY {proxy+}"
+            "http": "ANY {proxy+}",
+            "cors": true
           }
         ],
         "name": "serverless-flask-dev-app",
@@ -522,7 +524,7 @@
         ],
         "exclude": [],
         "artifact": "/home/aborghi/Documents/projects/NGM/ngmbackend/.serverless/serverless-flask.zip",
-        "artifactDirectoryName": "serverless/serverless-flask/dev/1597698445353-2020-08-17T21:07:25.353Z"
+        "artifactDirectoryName": "serverless/serverless-flask/dev/1597699645839-2020-08-17T21:27:25.839Z"
       },
       "layers": {
         "$ref": "$[\"service\"][\"layers\"]"
@@ -533,7 +535,7 @@
     "artifact": "/home/aborghi/Documents/projects/NGM/ngmbackend/.serverless/serverless-flask.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-flask/dev/1597698445353-2020-08-17T21:07:25.353Z",
+    "artifactDirectoryName": "serverless/serverless-flask/dev/1597699645839-2020-08-17T21:27:25.839Z",
     "artifact": "serverless-flask.zip"
   }
 }

@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-flask/dev/1597698445353-2020-08-17T21:07:25.353Z/serverless-flask.zip"
+          "S3Key": "serverless/serverless-flask/dev/1597699645839-2020-08-17T21:27:25.839Z/serverless-flask.zip"
         },
         "FunctionName": "serverless-flask-dev-app",
         "Handler": "wsgi_handler.handler",
@@ -290,7 +290,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1597698414987": {
+    "ApiGatewayDeployment1597699627887": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
